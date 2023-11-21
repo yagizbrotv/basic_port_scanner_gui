@@ -88,17 +88,9 @@ def on_exit():
 
         root.destroy()
 
-
-
-# GUI setup
-
 root = tk.Tk()
 
 root.title("Port Scanner")
-
-
-
-# Entry widgets
 
 label_target = tk.Label(root, text="Target IP address:")
 
@@ -114,27 +106,11 @@ entry_start_port = tk.Entry(root)
 
 entry_end_port = tk.Entry(root)
 
-
-
-# Result text widget
-
 result_text = tk.Text(root, height=15, width=50, wrap=tk.WORD)
-
-
-
-# Scan button
 
 scan_button = tk.Button(root, text="Scan Ports", command=scan_ports)
 
-
-
-# Exit button
-
 exit_button = tk.Button(root, text="Exit", command=on_exit)
-
-
-
-# Grid layout
 
 label_target.grid(row=0, column=0, padx=5, pady=5)
 
@@ -154,19 +130,12 @@ result_text.grid(row=4, column=0, columnspan=2, padx=5, pady=5)
 
 exit_button.grid(row=5, column=0, columnspan=2, pady=10)
 
-
-
-# Configure row and column weights
-
 for i in range(6):
 
     root.grid_rowconfigure(i, weight=1)
 
     root.grid_columnconfigure(i, weight=1)
 
-
-
-# Run the GUI
 
 root.protocol("WM_DELETE_WINDOW", on_exit)
 
